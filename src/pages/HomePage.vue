@@ -2,11 +2,15 @@
 import homeImage1 from "../assets/images/home/Montagem-Subestacao-Simplificada-768x768.png";
 import homeImage2 from "../assets/images/home/Iluminacao-Publica-768x768.png";
 import homeImage3 from "../assets/images/home/Manutencao-Transformadores.png";
+import { useMobile } from "../composables/useMobile";
+
+const { isMobile } = useMobile();
 
 const slides = [
   {
     title: "Subestações e redes elétricas",
-    description: "Projetos e soluções completas para distribuição de energia elétrica.",
+    description:
+      "Projetos e soluções completas para distribuição de energia elétrica.",
     image: homeImage1,
   },
   {
@@ -27,20 +31,30 @@ const slides = [
 <template>
   <q-page class="wrapper">
     <q-container class="q-py-xl home-page">
-      <div class="row items-center q-col-gutter-xl q-mb-xl q-mt-xs home-text-enter">
+      <div
+        class="row items-center q-col-gutter-xl q-mb-xl q-mt-xs home-text-enter"
+      >
         <div class="text-h4 text-md-h3 text-weight-bold text-grey-9">
           Soluções de engenharia e projetos elétricos.
         </div>
-      
+
         <div class="col-12">
           <div class="row q-col-gutter-lg">
-            <div v-for="(item, index) in slides" :key="index" class="col-12 col-md-4 home-card-wrap">
-              <q-card flat bordered class="rounded-borders shadow-3 overflow-hidden home-card">
+            <div
+              v-for="(item, index) in slides"
+              :key="index"
+              class="col-12 col-md-4 home-card-wrap"
+            >
+              <q-card
+                flat
+                bordered
+                class="rounded-borders shadow-3 overflow-hidden home-card"
+              >
                 <q-img
                   :src="item.image"
                   fit="contain"
                   class="partner-card-image"
-                  style="min-height: 320px;"
+                  style="min-height: 320px"
                 >
                   <div
                     class="absolute-bottom text-left q-pa-md bg-dark text-white home-card-text"
@@ -54,80 +68,97 @@ const slides = [
             </div>
           </div>
         </div>
-
-      <div class="q-pa-xl rounded-borders-xl">
-        <q-chip color="primary" text-color="white" class="q-mb-sm home-text-enter"
+        <div class="">
+          <q-chip
+          color="primary"
+          text-color="white"
+          class="q-mb-sm"
           >Por que escolher a GDX?</q-chip
         >
-        <div class="text-h4 text-md-h3 text-weight-bold text-grey-9 q-mb-lg home-text-enter delay-1">
-          Expertise técnica com atuação ágil e focada em resultados
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            controls
+            class="q-mt-xs video-mobile"
+           
+          >
+            <source src="/src/assets/video/empresa.mp4" type="video/mp4" />
+          </video>
         </div>
-
-        <div class="row q-col-gutter-lg">
-          <div class="col-12 col-md-4">
-            <q-card
-              flat
-              bordered
-              class="bg-white rounded-borders-lg full-height"
-            >
-              <q-card-section class="row items-start q-col-gutter-md">
-                <div class="text-h4 text-primary text-weight-bold">01</div>
-                <div>
-                  <div class="text-h6 text-grey-9 q-mb-xs">
-                    Planejamento estratégico
-                  </div>
-                  <div class="text-body2 text-grey-7">
-                    Projetos alinhados à operação real do cliente e às
-                    exigências do mercado.
-                  </div>
-                </div>
-              </q-card-section>
-            </q-card>
+        <div class="q-pa-xl rounded-borders-xl">
+          <div
+            class="text-h4 text-md-h3 text-weight-bold text-grey-9 q-mb-lg home-text-enter delay-1"
+          >
+            Expertise técnica com atuação ágil e focada em resultados
           </div>
 
-          <div class="col-12 col-md-4">
-            <q-card
-              flat
-              bordered
-              class="bg-white rounded-borders-lg full-height"
-            >
-              <q-card-section class="row items-start q-col-gutter-md">
-                <div class="text-h4 text-primary text-weight-bold">02</div>
-                <div>
-                  <div class="text-h6 text-grey-9 q-mb-xs">
-                    Execução com qualidade
+          <div class="row q-col-gutter-lg">
+            <div class="col-12 col-md-4">
+              <q-card
+                flat
+                bordered
+                class="bg-white rounded-borders-lg full-height"
+              >
+                <q-card-section class="row items-start q-col-gutter-md">
+                  <div class="text-h4 text-primary text-weight-bold">01</div>
+                  <div>
+                    <div class="text-h6 text-grey-9 q-mb-xs">
+                      Planejamento estratégico
+                    </div>
+                    <div class="text-body2 text-grey-7">
+                      Projetos alinhados à operação real do cliente e às
+                      exigências do mercado.
+                    </div>
                   </div>
-                  <div class="text-body2 text-grey-7">
-                    Processos rigorosos, equipe especializada e atenção aos
-                    detalhes técnicos.
-                  </div>
-                </div>
-              </q-card-section>
-            </q-card>
-          </div>
+                </q-card-section>
+              </q-card>
+            </div>
 
-          <div class="col-12 col-md-4">
-            <q-card
-              flat
-              bordered
-              class="bg-white rounded-borders-lg full-height"
-            >
-              <q-card-section class="row items-start q-col-gutter-md">
-                <div class="text-h4 text-primary text-weight-bold">03</div>
-                <div>
-                  <div class="text-h6 text-grey-9 q-mb-xs">
-                    Relacionamento transparente
+            <div class="col-12 col-md-4">
+              <q-card
+                flat
+                bordered
+                class="bg-white rounded-borders-lg full-height"
+              >
+                <q-card-section class="row items-start q-col-gutter-md">
+                  <div class="text-h4 text-primary text-weight-bold">02</div>
+                  <div>
+                    <div class="text-h6 text-grey-9 q-mb-xs">
+                      Execução com qualidade
+                    </div>
+                    <div class="text-body2 text-grey-7">
+                      Processos rigorosos, equipe especializada e atenção aos
+                      detalhes técnicos.
+                    </div>
                   </div>
-                  <div class="text-body2 text-grey-7">
-                    Comunicação clara, relacionamento próximo e foco em soluções
-                    confiáveis.
+                </q-card-section>
+              </q-card>
+            </div>
+
+            <div class="col-12 col-md-4">
+              <q-card
+                flat
+                bordered
+                class="bg-white rounded-borders-lg full-height"
+              >
+                <q-card-section class="row items-start q-col-gutter-md">
+                  <div class="text-h4 text-primary text-weight-bold">03</div>
+                  <div>
+                    <div class="text-h6 text-grey-9 q-mb-xs">
+                      Relacionamento transparente
+                    </div>
+                    <div class="text-body2 text-grey-7">
+                      Comunicação clara, relacionamento próximo e foco em
+                      soluções confiáveis.
+                    </div>
                   </div>
-                </div>
-              </q-card-section>
-            </q-card>
+                </q-card-section>
+              </q-card>
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </q-container>
   </q-page>
@@ -167,6 +198,13 @@ const slides = [
 
 .home-text-enter.delay-1 {
   animation-delay: 0.15s;
+}
+
+.video-mobile {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
 }
 
 @keyframes cardIn {
