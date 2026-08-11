@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { getCurrentYear } from '../utils/functions'
 import logo from "../assets/images/logo.svg";
+import { useMobile } from '../composables/useMobile';
 
 const currentYear = getCurrentYear()
+const { isMobile } = useMobile()
 </script>
 
 <template>
   <q-footer class="bg-primary text-white">
-    <div class="row items-center q-pa-md footer-layout">
+    <div class="row items-center q-pa-md footer-layout" :class="isMobile ? '' : 'wrapper' ">
       <div class="col-12 col-md-4 footer-brand">
         <img :src="logo" alt="GDX Energia" width="85" class="footer-logo" />
       </div>

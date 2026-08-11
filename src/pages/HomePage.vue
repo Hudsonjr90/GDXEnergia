@@ -33,6 +33,10 @@ const slides = [
   <q-page class="wrapper">
     <q-container class="q-py-xl">
       <div class="row items-center q-col-gutter-xl q-mb-xl q-mt-xs">
+        <div class="text-h4 text-md-h3 text-weight-bold text-grey-9">
+          Soluções de engenharia e projetos elétricos.
+        </div>
+      
         <div class="col-12 col-6">
           <q-carousel
             v-model="slide"
@@ -58,13 +62,8 @@ const slides = [
             </q-carousel-slide>
           </q-carousel>
         </div>
-             <div class="q-mb-xl">
-        <h2 class="text-h4 text-md-h3 text-weight-bold text-grey-9">
-          Soluções de engenharia e projetos elétricos.
-        </h2>
-      </div>
 
-      <div class="row q-col-gutter-lg q-mb-xl">
+      <!-- <div class="row q-col-gutter-lg q-mb-xl">
         <div class="col-12 col-md-4">
           <q-card flat bordered class="bg-white rounded-borders-xl full-height">
             <q-card-section>
@@ -119,15 +118,15 @@ const slides = [
             </q-card-section>
           </q-card>
         </div>
-      </div>
+      </div> -->
 
-      <div class="q-pa-lg bg-green-1 rounded-borders-xl">
-        <q-badge color="primary" text-color="white" class="q-mb-sm"
-          >Por que escolher a GDX</q-badge
+      <div class="q-pa-xl rounded-borders-xl">
+        <q-chip color="primary" text-color="white" class="q-mb-sm"
+          >Por que escolher a GDX?</q-chip
         >
-        <h2 class="text-h4 text-md-h3 text-weight-bold text-grey-9 q-mb-lg">
+        <div class="text-h4 text-md-h3 text-weight-bold text-grey-9 q-mb-lg">
           Expertise técnica com atuação ágil e focada em resultados
-        </h2>
+        </div>
 
         <div class="row q-col-gutter-lg">
           <div class="col-12 col-md-4">
