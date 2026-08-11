@@ -1,7 +1,7 @@
 <template>
   <q-page class="wrapper">
-    <q-container class="q-py-xl">
-      <div class="text-center q-mb-xl">
+    <q-container class="q-py-xl page-animate">
+      <div class="text-center q-mb-xl page-anim-item">
         <div class="text-h4 text-md-h2 text-weight-bold text-grey-9 q-mt-lg q-mb-none">
           Relacionamentos que ampliam capacidade e confiança.
         </div>
@@ -20,7 +20,7 @@
         autoplay
         swipeable
         control-color="primary"
-        class="full-width"
+        class="full-width page-anim-item delay-1"
       >
         <q-carousel-slide v-for="(group, index) in partnerGroups" :key="index" :name="index" class="column no-wrap">
           <div class="row q-col-gutter-lg items-stretch justify-center q-pa-md">

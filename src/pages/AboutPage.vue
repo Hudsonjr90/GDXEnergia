@@ -87,15 +87,16 @@ onUnmounted(() => observer.value?.disconnect());
 
 <template>
   <q-page class="wrapper">
-    <div class="stats-container q-mb-xl">
-      <h2 class="text-h4 text-center text-weight-bold text-grey-9 q-mb-md">
-        GDX em números
-      </h2>
+    <q-container class="q-py-xl page-animate">
+      <div class="stats-container q-mb-xl page-anim-item">
+        <h2 class="text-h4 text-center text-weight-bold text-grey-9 q-mb-md">
+          GDX em números
+        </h2>
       <div class="text-subtitle1 text-center text-grey-7 q-mb-lg">
-        Idicadores institucionais que refletem nossa trajetória e compromisso com a excelência.
+        Indicadores institucionais que refletem nossa trajetória e compromisso com a excelência.
       </div>
 
-      <div class="row q-col-gutter-lg stats-grid">
+      <div class="row q-col-gutter-lg stats-grid page-anim-item delay-1">
         <div v-for="(stat, index) in stats" :key="index" class="col-12 col-sm-6 col-md stats-item">
           <q-card flat class="bg-secondary text-white h-full stat-card">
             <q-card-section class="fit column justify-center items-center q-py-lg q-px-md">
@@ -121,7 +122,7 @@ onUnmounted(() => observer.value?.disconnect());
       </div>
     </div>
 
-    <div class="text-center q-mb-xl">
+    <div class="text-center q-mb-xl page-anim-item delay-2">
       <h1 class="text-h4 text-md-h3 text-weight-bold text-grey-9 q-mt-md q-mb-sm">
         A GDX é uma empresa com uma sólida reputação no mercado elétrico
       </h1>
@@ -149,7 +150,7 @@ onUnmounted(() => observer.value?.disconnect());
       />
     </div>
 
-    <div class="row q-col-gutter-lg justify-center q-mb-xl cards-equal-height">
+    <div class="row q-col-gutter-lg justify-center q-mb-xl cards-equal-height page-anim-item delay-3">
       <div class="col-12 col-md-4">
         <q-card flat bordered class="bg-white rounded-borders-xl card-equal-height h-full">
           <q-card-section class="text-center q-pa-lg full-height column justify-between">
@@ -218,6 +219,7 @@ onUnmounted(() => observer.value?.disconnect());
         </q-card>
       </div>
     </div>
+  </q-container>
   </q-page>
 </template>
 

@@ -3,15 +3,15 @@
 
 <template>
   <q-page class="wrapper">
-    <q-container class="q-py-xl">
-      <div class="text-center q-mb-xl">
+    <q-container class="q-py-xl page-animate">
+      <div class="text-center q-mb-xl page-anim-item">
         <div class="text-h4 text-md-h2 text-weight-bold text-grey-9 q-mt-lg q-mb-lg">
           Vamos discutir a solução ideal para o seu projeto.
         </div>
       </div>
 
       <div class="row q-col-gutter-xl">
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 page-anim-item delay-1">
           <div class="q-gutter-md">
             <div class="row items-center q-gutter-sm">
               <q-btn
@@ -59,7 +59,7 @@
         </div>
 
         <!-- Coluna direita: Mapa com URL exata do seu antigo site -->
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 page-anim-item delay-2">
           <div class="map-container rounded-borders">
             <iframe
               src="https://www.google.com/maps?cid=17482256488818489539&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=pt-BR&output=embed"
