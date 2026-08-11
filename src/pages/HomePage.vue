@@ -37,11 +37,10 @@ const slides = [
           <q-carousel
             v-model="slide"
             animated
-            :arrows="isMobile ? false : true"
             infinite
             autoplay
             height="440px"
-            class="rounded-borders-xl shadow-3"
+            class="rounded-borders shadow-3"
           >
             <q-carousel-slide
               v-for="(item, index) in slides"
