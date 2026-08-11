@@ -1,22 +1,23 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import logo from '../assets/images/logo.png'
+import { ref } from "vue";
+import logo from "../assets/images/logo.svg";
+import logo2 from "../assets/images/logo2.svg";
 
 const menu = [
-  { label: 'Home', to: '/' },
-  { label: 'Sobre nós', to: '/sobre' },
-  { label: 'Portfólio', to: '/portfolio' },
-  { label: 'Parceiros', to: '/parceiros' },
-  { label: 'Contato', to: '/contato' },
-]
+  { label: "Home", to: "/", icon: "mdi-home-outline" },
+  { label: "Sobre nós", to: "/sobre", icon: "mdi-account-group-outline" },
+  { label: "Portfólio", to: "/portfolio", icon: "mdi-briefcase-outline" },
+  { label: "Parceiros", to: "/parceiros", icon: "mdi-handshake-outline" },
+  { label: "Contato", to: "/contato", icon: "mdi-email-outline" },
+];
 
-const leftDrawerOpen = ref(false)
+const leftDrawerOpen = ref(false);
 </script>
 
 <template>
   <q-header elevated class="bg-primary text-grey-9 app-header">
-    <q-toolbar class="q-px-lg q-py-sm header-toolbar">
-        <q-img :src="logo" alt="GDX Energia" class="header-logo" />
+    <q-toolbar class="q-px-lg q-py-sm header-toolbar wrapper">
+      <q-img :src="logo" alt="GDX Energia" class="header-logo" />
       <q-space />
 
       <div class="row items-center no-wrap gt-sm">
@@ -38,17 +39,29 @@ const leftDrawerOpen = ref(false)
         flat
         dense
         round
-        icon="menu"
+        icon="mdi-menu"
         class="lt-md mobile-menu-btn text-white"
         @click="leftDrawerOpen = !leftDrawerOpen"
       />
     </q-toolbar>
   </q-header>
 
-  <q-drawer v-model="leftDrawerOpen" side="right" overlay behavior="mobile" class="bg-white mobile-drawer">
+  <q-drawer
+    v-model="leftDrawerOpen"
+    side="right"
+    overlay
+    behavior="mobile"
+    class="bg-white mobile-drawer"
+  >
     <div class="drawer-top row items-center justify-between q-pa-md">
-      
-      <q-btn flat dense round icon="close" @click="leftDrawerOpen = false" />
+      <q-img :src="logo2" alt="GDX Energia" class="header-logo" />
+      <q-btn
+        flat
+        dense
+        round
+        icon="mdi-close"
+        @click="leftDrawerOpen = false"
+      />
     </div>
 
     <q-list padding>
@@ -61,9 +74,18 @@ const leftDrawerOpen = ref(false)
         :active="$route.path === item.to"
         active-class="drawer-item-active"
       >
-        <q-item-section>{{ item.label }}</q-item-section>
-      </q-item>
+        <q-item-section avatar>
+          <q-icon
+            :name="item.icon"
+            size="22px"
+            :color="$route.path === item.to ? 'primary' : 'grey-7'"
+          />
+        </q-item-section>
 
+        <q-item-section>
+          {{ item.label }}
+        </q-item-section>
+      </q-item>
     </q-list>
   </q-drawer>
 </template>
@@ -81,7 +103,9 @@ const leftDrawerOpen = ref(false)
 .menu-item {
   border-bottom: 2px solid transparent;
   border-radius: 0;
-  transition: border-color 0.2s ease, opacity 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .menu-item-active {
@@ -89,8 +113,10 @@ const leftDrawerOpen = ref(false)
 }
 
 .drawer-item-active {
-  border-left: 3px solid #209E2E;
+  border-left: 3px solid #209e2e;
   background: rgba(32, 158, 46, 0.08);
+  color: #209e2e;
+  font-weight: 600;
 }
 
 @media (max-width: 1023px) {
@@ -100,8 +126,8 @@ const leftDrawerOpen = ref(false)
   }
 
   .header-logo {
-    width: 120px;
-    height: 32px;
+    width: 90px;
+    height: 40px;
   }
 }
 </style>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AppHeader from './components/AppHeader.vue'
+import AppFooter from './components/AppFooter.vue'
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import AppHeader from './components/AppHeader.vue'
         </transition>
       </router-view>
     </q-page-container>
+    <AppFooter />
   </q-layout>
 </template>
 
