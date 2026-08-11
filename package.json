@@ -1,0 +1,28 @@
+{
+  "name": "gdxenergia",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@quasar/extras": "^2.0.3",
+    "quasar": "^2.24.0",
+    "vue": "^3.5.40",
+    "vue-router": "^5.2.0"
+  },
+  "devDependencies": {
+    "@quasar/vite-plugin": "^2.0.0",
+    "@types/node": "^26.2.0",
+    "@vitejs/plugin-vue": "^6.0.8",
+    "@vue/devtools": "^8.2.1",
+    "sass": "^1.102.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.0",
+    "vite-plugin-vue-devtools": "^8.2.1",
+    "vue-tsc": "^3.3.9"
+  }
+}
