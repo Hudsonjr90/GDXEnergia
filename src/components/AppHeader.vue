@@ -51,7 +51,7 @@ const leftDrawerOpen = ref(false);
     side="right"
     overlay
     behavior="mobile"
-    class="bg-white mobile-drawer"
+    class="mobile-drawer bg-mobile"
   >
     <div class="drawer-top row items-center justify-between q-pa-md">
       <q-img :src="logo2" alt="GDX Energia" class="header-logo" />
@@ -60,11 +60,12 @@ const leftDrawerOpen = ref(false);
         dense
         round
         icon="mdi-close"
+        class="text-white"
         @click="leftDrawerOpen = false"
       />
     </div>
 
-    <q-list padding>
+    <q-list padding class="drawer-list">
       <q-item
         v-for="item in menu"
         :key="item.label"
@@ -73,12 +74,13 @@ const leftDrawerOpen = ref(false);
         @click="leftDrawerOpen = false"
         :active="$route.path === item.to"
         active-class="drawer-item-active"
+        class="drawer-item"
       >
         <q-item-section avatar>
           <q-icon
             :name="item.icon"
             size="22px"
-            :color="$route.path === item.to ? 'primary' : 'grey-7'"
+            :color="$route.path === item.to ? 'primary' : 'white'"
           />
         </q-item-section>
 
@@ -112,11 +114,30 @@ const leftDrawerOpen = ref(false);
   border-bottom-color: #ffffff;
 }
 
+.drawer-item {
+  color: #ffffff;
+}
+
 .drawer-item-active {
   border-left: 3px solid #209e2e;
-  background: rgba(32, 158, 46, 0.08);
-  color: #209e2e;
+  background: rgba(32, 158, 46, 0.25);
+  color: #ffffff;
   font-weight: 600;
+}
+
+.bg-mobile {
+  position: relative;
+}
+
+:deep(.bg-mobile) {
+  background-image: linear-gradient(to bottom, rgba(4, 12, 8, 0.75), rgba(4, 12, 8, 0.9)), url(../assets/images/bg-gdx.jpg) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.drawer-top {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 @media (max-width: 1023px) {

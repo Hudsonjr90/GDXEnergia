@@ -2,6 +2,13 @@
 import homeImage1 from "../assets/images/home/Montagem-Subestacao-Simplificada-768x768.png";
 import homeImage2 from "../assets/images/home/Iluminacao-Publica-768x768.png";
 import homeImage3 from "../assets/images/home/Manutencao-Transformadores.png";
+import homeSegment1 from "../assets/images/home/loteamentos.png";
+import homeSegment2 from "../assets/images/home/condominios.png";
+import homeSegment3 from "../assets/images/home/industrias.png";
+import homeSegment4 from "../assets/images/home/centrologisticos.png";
+import homeSegment5 from "../assets/images/home/empreendimentoscomerciais.png";
+import homeSegment6 from "../assets/images/home/empreendimentosresidenciais.png";
+
 import { useMobile } from "../composables/useMobile";
 
 const { isMobile } = useMobile();
@@ -31,32 +38,32 @@ const segments = [
   {
     title: "Loteamentos",
     icon: "mdi-map-outline",
-    image: homeImage1,
+    image: homeSegment1,
   },
   {
     title: "Condomínios",
     icon: "mdi-city-variant-outline",
-    image: homeImage2,
+    image: homeSegment2,
   },
   {
     title: "Indústrias",
     icon: "mdi-factory",
-    image: homeImage3,
+    image: homeSegment3,
   },
   {
     title: "Centros logísticos",
     icon: "mdi-truck-fast-outline",
-    image: homeImage1,
+    image: homeSegment4,
   },
   {
     title: "Empreendimentos comerciais",
     icon: "mdi-office-building-outline",
-    image: homeImage2,
+    image: homeSegment5,
   },
   {
     title: "Empreendimentos residenciais",
     icon: "mdi-home-city-outline",
-    image: homeImage3,
+    image: homeSegment6,
   },
 ];
 </script>
@@ -148,7 +155,7 @@ const segments = [
             </div>
 
             <div class="col-12">
-              <div class="row q-col-gutter-md justify-center">
+              <div class="row q-col-gutter-md justify-center segments-grid">
                 <div
                   v-for="(segment, index) in segments"
                   :key="index"
@@ -251,6 +258,12 @@ const segments = [
   margin-top: 10px;
 }
 
+.segments-grid {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .segment-wrap {
   display: flex;
 }
@@ -264,6 +277,7 @@ const segments = [
 
 .segment-image {
   min-height: 250px;
+  max-height: 250px;
 }
 
 .segment-caption {
@@ -277,6 +291,12 @@ const segments = [
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .segments-grid {
+    max-width: 980px;
+  }
 }
 
 @media (max-width: 1023px) {
