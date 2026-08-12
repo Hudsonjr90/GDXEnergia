@@ -2,6 +2,8 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 
 const showFullText = ref(false);
+const showCompanyPdf = ref(false);
+const companyPdfUrl = '/empresa-gdx.pdf';
 
 const stats = [
   {
@@ -219,6 +221,48 @@ onUnmounted(() => observer.value?.disconnect());
         </q-card>
       </div>
     </div>
+
+    <div class="text-center q-mt-xl page-anim-item">
+        <q-btn
+          dense
+          unelevated
+          color="primary"
+          label="Veja mais sobre nós"
+          no-caps
+          class="q-mb-md"
+          @click="showCompanyPdf = true"
+        />
+      </div>
+
+    <q-dialog v-model="showCompanyPdf" maximized>
+      <q-card class="pdf-modal-card column no-wrap">
+        <q-card-section class="row items-center justify-between q-py-sm q-px-md bg-white">
+          <div class="text-subtitle1 text-weight-bold text-grey-9">Apresentacao institucional da GDX</div>
+          <div class="row items-center q-gutter-sm">
+            <q-btn
+              flat
+              color="primary"
+              icon="mdi-open-in-new"
+              label="Abrir em nova aba"
+              no-caps
+              :href="companyPdfUrl"
+              target="_blank"
+            />
+            <q-btn flat round dense icon="mdi-close" color="grey-8" @click="showCompanyPdf = false" />
+          </div>
+        </q-card-section>
+
+        <q-separator />
+
+        <div class="pdf-frame-wrap">
+          <iframe
+            :src="companyPdfUrl"
+            title="PDF institucional da GDX"
+            class="pdf-frame"
+          />
+        </div>
+      </q-card>
+    </q-dialog>
   </q-container>
   </q-page>
 </template>
@@ -255,6 +299,22 @@ onUnmounted(() => observer.value?.disconnect());
 
 .stat-description {
   min-height: 52px;
+}
+
+.pdf-modal-card {
+  height: 100vh;
+}
+
+.pdf-frame-wrap {
+  flex: 1;
+  min-height: 0;
+  background: #f4f6f8;
+}
+
+.pdf-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 @media (max-width: 599px) {

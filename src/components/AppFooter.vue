@@ -55,6 +55,16 @@ const { isMobile } = useMobile()
             target="_blank"
             aria-label="LinkedIn"
           />
+          <q-btn
+            flat
+            round
+            dense
+            icon="mdi-whatsapp"
+            type="a"
+            href="https://wa.me/5521999350077?text=Olá%20GDX%20Energia!%20Gostaria%20de%20mais%20informações%20sobre%20seus%20serviços%20e%20soluções%20em%20energia."
+            target="_blank"
+            aria-label="WhatsApp"
+          />
         </div>
       </div>
     </div>

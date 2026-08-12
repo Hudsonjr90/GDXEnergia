@@ -26,15 +26,48 @@ const slides = [
     image: homeImage3,
   },
 ];
+
+const segments = [
+  {
+    title: "Loteamentos",
+    icon: "mdi-map-outline",
+    image: homeImage1,
+  },
+  {
+    title: "Condomínios",
+    icon: "mdi-city-variant-outline",
+    image: homeImage2,
+  },
+  {
+    title: "Indústrias",
+    icon: "mdi-factory",
+    image: homeImage3,
+  },
+  {
+    title: "Centros logísticos",
+    icon: "mdi-truck-fast-outline",
+    image: homeImage1,
+  },
+  {
+    title: "Empreendimentos comerciais",
+    icon: "mdi-office-building-outline",
+    image: homeImage2,
+  },
+  {
+    title: "Empreendimentos residenciais",
+    icon: "mdi-home-city-outline",
+    image: homeImage3,
+  },
+];
 </script>
 
 <template>
   <q-page class="wrapper">
     <q-container class="q-py-xl home-page">
       <div
-        class="row items-center q-col-gutter-xl q-mb-xl q-mt-xs home-text-enter"
+        class="row items-start q-col-gutter-xl q-mb-xl q-mt-xs home-text-enter"
       >
-        <div class="text-h4 text-md-h3 text-weight-bold text-grey-9">
+        <div class="col-12 text-h4 text-md-h3 text-weight-bold text-grey-9">
           Soluções de engenharia e projetos elétricos.
         </div>
 
@@ -68,94 +101,71 @@ const slides = [
             </div>
           </div>
         </div>
-        <div class="">
-          <q-chip
-          color="primary"
-          text-color="white"
-          class="q-mb-sm"
-          >Por que escolher a GDX?</q-chip
-        >
-          <video
-            autoplay
-            muted
-            loop
-            playsinline
-            controls
-            class="q-mt-xs video-mobile"
-           
-          >
-            <source src="/src/assets/video/empresa.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div class="q-pa-xl rounded-borders-xl">
-          <div
-            class="text-h4 text-md-h3 text-weight-bold text-grey-9 q-mb-lg home-text-enter delay-1"
-          >
-            Expertise técnica com atuação ágil e focada em resultados
+        <div class="col-12">
+          <div class="row q-col-gutter-xl items-center video-section">
+            <div class="col-12 col-md-5">
+              <q-chip color="primary" text-color="white" class="q-mb-sm">
+                Por que escolher a GDX?
+              </q-chip>
+
+              <div class="text-h5 text-weight-bold text-grey-9 q-mb-sm">
+                Solidez técnica com foco em resultado
+              </div>
+
+              <div class="text-body1 text-grey-7">
+                Conheça um pouco da nossa estrutura, da nossa equipe e de como
+                conduzimos cada projeto com qualidade, segurança e eficiência.
+              </div>
+            </div>
+
+            <div class="col-12 col-md-7">
+              <div class="video-frame">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  controls
+                  class="video-mobile"
+                >
+                  <source src="/src/assets/video/empresa.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
           </div>
-
-          <div class="row q-col-gutter-lg">
-            <div class="col-12 col-md-4">
-              <q-card
-                flat
-                bordered
-                class="bg-white rounded-borders-lg full-height"
-              >
-                <q-card-section class="row items-start q-col-gutter-md">
-                  <div class="text-h4 text-primary text-weight-bold">01</div>
-                  <div>
-                    <div class="text-h6 text-grey-9 q-mb-xs">
-                      Planejamento estratégico
-                    </div>
-                    <div class="text-body2 text-grey-7">
-                      Projetos alinhados à operação real do cliente e às
-                      exigências do mercado.
-                    </div>
-                  </div>
-                </q-card-section>
-              </q-card>
+        </div>
+        <div class="col-12 q-pa-xl rounded-borders-xl segments-block">
+          <div class="row q-col-gutter-lg items-start">
+            <div class="col-12">
+              <div class="segments-intro full-height">
+                <div class="text-h4 text-md-h3 text-weight-bold text-grey-9 q-mb-sm home-text-enter delay-1">
+                  Segmentos atendidos
+                </div>
+                <div class="text-subtitle1 text-grey-7 q-mb-lg">
+                  Soluções completas e personalizadas para diferentes tipos de empreendimento.
+                </div>
+              </div>
             </div>
 
-            <div class="col-12 col-md-4">
-              <q-card
-                flat
-                bordered
-                class="bg-white rounded-borders-lg full-height"
-              >
-                <q-card-section class="row items-start q-col-gutter-md">
-                  <div class="text-h4 text-primary text-weight-bold">02</div>
-                  <div>
-                    <div class="text-h6 text-grey-9 q-mb-xs">
-                      Execução com qualidade
-                    </div>
-                    <div class="text-body2 text-grey-7">
-                      Processos rigorosos, equipe especializada e atenção aos
-                      detalhes técnicos.
-                    </div>
-                  </div>
-                </q-card-section>
-              </q-card>
-            </div>
-
-            <div class="col-12 col-md-4">
-              <q-card
-                flat
-                bordered
-                class="bg-white rounded-borders-lg full-height"
-              >
-                <q-card-section class="row items-start q-col-gutter-md">
-                  <div class="text-h4 text-primary text-weight-bold">03</div>
-                  <div>
-                    <div class="text-h6 text-grey-9 q-mb-xs">
-                      Relacionamento transparente
-                    </div>
-                    <div class="text-body2 text-grey-7">
-                      Comunicação clara, relacionamento próximo e foco em
-                      soluções confiáveis.
-                    </div>
-                  </div>
-                </q-card-section>
-              </q-card>
+            <div class="col-12">
+              <div class="row q-col-gutter-md justify-center">
+                <div
+                  v-for="(segment, index) in segments"
+                  :key="index"
+                  class="col-12 col-sm-6 col-md-4 segment-wrap"
+                >
+                  <q-card flat bordered class="rounded-borders-lg overflow-hidden segment-card">
+                    <q-img :src="segment.image" fit="cover" class="segment-image">
+                      <div class="absolute-bottom segment-caption row items-center no-wrap q-gutter-sm">
+                        <q-icon :name="segment.icon" color="primary" size="22px" />
+                        <div class="text-subtitle2 text-weight-bold text-uppercase ellipsis-2-lines">
+                          {{ segment.title }}
+                        </div>
+                      </div>
+                    </q-img>
+                  </q-card>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -202,9 +212,83 @@ const slides = [
 
 .video-mobile {
   width: 100%;
+  height: 100%;
   display: block;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.video-section {
+  margin-top: 6px;
+}
+
+.video-frame {
+  width: 100%;
+  max-width: 760px;
+  margin-left: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: #0d0f12;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+}
+
+.segments-block {
+  background: #fff;
+}
+
+.segments-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  max-width: 760px;
   margin: 0 auto;
-  border-radius: 8px;
+}
+
+.segment-callout {
+  margin-top: 10px;
+}
+
+.segment-wrap {
+  display: flex;
+}
+
+.segment-card {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  display: flex;
+}
+
+.segment-image {
+  min-height: 250px;
+}
+
+.segment-caption {
+  background: rgba(15, 26, 20, 0.86);
+  border-top: 1px solid rgba(121, 219, 0, 0.35);
+}
+
+.ellipsis-2-lines {
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 1023px) {
+  .segment-card,
+  .segment-image {
+    min-height: 220px;
+  }
+
+  .video-frame {
+    max-width: 100%;
+    margin-left: 0;
+  }
 }
 
 @keyframes cardIn {
