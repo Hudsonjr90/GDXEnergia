@@ -3,11 +3,49 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { getProjectBySlug } from '../data/portfolioProjects'
 import { parseRichText } from '../utils/richText'
+import { useSeo, useJsonLd } from '../composables/useSeo'
+import { SITE_NAME, SITE_URL } from '../config/seo'
 
 const route = useRoute()
 
 const project = computed(() => getProjectBySlug(String(route.params.slug)))
 const blocks = computed(() => (project.value ? parseRichText(project.value.modalDescription) : []))
+
+useSeo(
+  computed(() =>
+    project.value
+      ? {
+          title: project.value.title,
+          description: project.value.previewText,
+          image: project.value.image,
+          type: 'article' as const,
+          keywords: [project.value.title, 'GDX Energia', 'engenharia elétrica'],
+        }
+      : { title: 'Projeto não encontrado', noIndex: true }
+  )
+)
+
+useJsonLd(
+  'portfolio-service',
+  computed(() =>
+    project.value
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          serviceType: project.value.title,
+          name: `${project.value.title} | ${SITE_NAME}`,
+          description: project.value.previewText,
+          provider: {
+            '@type': 'Organization',
+            name: SITE_NAME,
+            url: SITE_URL,
+          },
+          areaServed: 'BR',
+          url: `${SITE_URL}/portfolio/${project.value.slug}`,
+        }
+      : undefined
+  )
+)
 </script>
 
 <template>

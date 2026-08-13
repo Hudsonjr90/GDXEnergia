@@ -1,6 +1,15 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 import AppHeader from './components/AppHeader.vue'
 import AppFooter from './components/AppFooter.vue'
+import { useSeo } from './composables/useSeo'
+import { staticRoutesSeo } from './config/seo'
+
+const route = useRoute()
+
+// Aplica o SEO padrão da rota atual; páginas com dados dinâmicos (ex.: PortfolioDetailPage) sobrescrevem por conta própria
+useSeo(computed(() => staticRoutesSeo[route.path]))
 </script>
 
 <template>

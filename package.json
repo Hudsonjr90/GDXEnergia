@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && tsx scripts/prerender-seo.ts",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -20,6 +20,7 @@
     "@vitejs/plugin-vue": "^6.0.8",
     "@vue/devtools": "^8.2.1",
     "sass": "^1.102.0",
+    "tsx": "^4.23.12",
     "typescript": "^7.0.2",
     "vite": "^8.2.0",
     "vite-plugin-vue-devtools": "^8.2.1",

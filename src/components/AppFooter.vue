@@ -41,7 +41,7 @@ const { isMobile } = useMobile()
             dense
             icon="mdi-instagram"
             type="a"
-            href="#"
+            href="https://www.instagram.com/gdxenergia?igsh=MThkbHRiaThwYndweQ%3D%3D"
             target="_blank"
             aria-label="Instagram"
           />
