@@ -14,6 +14,7 @@
       </div>
 
       <q-carousel
+        v-if="isMobile"
         v-model="slide"
         animated
         infinite
@@ -24,9 +25,9 @@
       >
         <q-carousel-slide v-for="(group, index) in partnerGroups" :key="index" :name="index" class="column no-wrap">
           <div class="row q-col-gutter-lg items-stretch justify-center q-pa-md">
-            <div v-for="partner in group" :key="partner.name" class="col-12 col-sm-6 col-md-4">
+            <div v-for="partner in group" :key="partner.name" class="col-12">
               <q-card flat bordered class="partner-card">
-                <q-card-section class="flex flex-center  q-pa-lg">
+                <q-card-section class="flex flex-center q-pa-lg">
                   <q-img
                     :src="partner.image"
                     fit="contain"
@@ -40,13 +41,29 @@
           </div>
         </q-carousel-slide>
       </q-carousel>
+
+      <div v-else class="row q-col-gutter-lg items-stretch justify-center page-anim-item delay-1">
+        <div v-for="partner in partners" :key="partner.name" class="col-12 col-sm-6 col-md-4">
+          <q-card flat bordered class="partner-card">
+            <q-card-section class="flex flex-center q-pa-lg">
+              <q-img
+                :src="partner.image"
+                fit="contain"
+                class="partner-logo"
+                :ratio="4/3"
+                loading="lazy"
+              />
+            </q-card-section>
+          </q-card>
+        </div>
+      </div>
     </q-container>
   </q-page>
 </template>
 
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { useQuasar } from 'quasar'
+import { useMobile } from '../composables/useMobile'
 
 import apj from '../assets/images/parceiros/APJ-Construcoes.png'
 import bothanica from '../assets/images/parceiros/Bothanica-Urbanismo.png'
@@ -55,7 +72,7 @@ import legusta from '../assets/images/parceiros/Legusta.png'
 import tyr from '../assets/images/parceiros/TYR-energia.png'
 import villaBlanca from '../assets/images/parceiros/Villa-Blanca-Residence.png'
 
-const $q = useQuasar()
+const { isMobile } = useMobile()
 
 const partners = [
   { name: 'APJ Construções', image: apj },
@@ -68,7 +85,7 @@ const partners = [
 
 const slide = ref(0)
 
-const chunkSize = computed(() => ($q.screen.lt.md ? 1 : 3))
+const chunkSize = computed(() => (isMobile ? 1 : 3))
 
 const partnerGroups = computed(() => {
   const groups: Array<typeof partners> = []

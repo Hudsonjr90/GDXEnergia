@@ -11,8 +11,9 @@
       </div>
 
       <div class="row q-col-gutter-xl">
-        <div class="col-12 col-md-6 page-anim-item delay-1">
+        <div class="col-12 col-md-6 page-anim-item delay-1 wrapper">
           <div class="q-gutter-md">
+            <div class="text-h4 text-md-h2 text-weight-bold text-grey-9 q-mt-xl q-mb-xl">Fale conosco</div>
             <div class="row items-center q-gutter-sm">
               <q-btn
                 flat
@@ -43,7 +44,7 @@
 
             <div class="row items-center q-gutter-sm">
               <q-btn
-                label="Whatsapp"
+                label="(21) 99935-0077"
                 no-caps
                 color="primary"
                 flat
@@ -58,7 +59,6 @@
           </div>
         </div>
 
-        <!-- Coluna direita: Mapa com URL exata do seu antigo site -->
         <div class="col-12 col-md-6 page-anim-item delay-2">
           <div class="map-container rounded-borders">
             <iframe
@@ -80,5 +80,6 @@
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 500px;
 }
 </style>

@@ -12,6 +12,7 @@ import {
   staticRoutesSeo,
   portfolioRoutesSeo,
 } from '../src/config/seo'
+import process from 'node:process'
 
 interface RouteToRender {
   path: string
