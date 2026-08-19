@@ -135,7 +135,7 @@ const segments = [
                   controls
                   class="video-mobile"
                 >
-                  <source src="/src/assets/video/empresa.mp4" type="video/mp4" />
+                  <source src="/video/empresa.mp4" type="video/mp4" />
                 </video>
               </div>
             </div>

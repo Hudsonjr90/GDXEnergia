@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Mantém arquivos e diretórios que existem fisicamente
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Envia as demais rotas para o Vue
+    RewriteRule ^ index.html [L]
+</IfModule>
