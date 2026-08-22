@@ -29,16 +29,6 @@ const { isMobile } = useMobile()
             flat
             round
             dense
-            icon="mdi-facebook"
-            type="a"
-            href="#"
-            target="_blank"
-            aria-label="Facebook"
-          />
-          <q-btn
-            flat
-            round
-            dense
             icon="mdi-instagram"
             type="a"
             href="https://www.instagram.com/gdxenergia?igsh=MThkbHRiaThwYndweQ%3D%3D"

@@ -111,11 +111,11 @@ onBeforeUnmount(() => {
         <span class="compare-label after">Depois</span>
       </div>
     </div>
-    <q-card-section class="q-pa-md">
+    <!-- <q-card-section class="q-pa-md">
       <div class="text-subtitle2 text-weight-bold text-grey-9 compare-card-title">
         {{ props.title }}
       </div>
-    </q-card-section>
+    </q-card-section> -->
   </q-card>
 </template>
 
@@ -124,7 +124,7 @@ onBeforeUnmount(() => {
   display: flex;
   flex-direction: column;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  min-height: 360px;
+  min-height: 400px;
   height: 100%;
 }
 
@@ -136,7 +136,7 @@ onBeforeUnmount(() => {
 .compare-card-inner {
   position: relative;
   width: 100%;
-  height: 220px;
+  height: 400px;
   overflow: hidden;
   background: #111;
 }
