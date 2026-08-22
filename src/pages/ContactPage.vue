@@ -13,7 +13,7 @@
       <div class="row q-col-gutter-xl">
         <div class="col-12 col-md-6 page-anim-item delay-1 wrapper">
           <div class="q-gutter-md">
-            <div class="text-h4 text-md-h2 text-weight-bold text-grey-9 q-mt-xl q-mb-xl">Fale conosco</div>
+            <div class="text-h4 text-center text-weight-bold text-grey-9 q-mt-xl q-mb-xl">Fale conosco</div>
             <div class="row items-center q-gutter-sm">
               <q-btn
                 flat
@@ -25,6 +25,7 @@
                 icon="mdi-email-outline"
                 type="a"
                 href="mailto:contato@gdxenergia.com.br?subject=Contato%20GDX%20Energia&body=Olá,%20gostaria%20de%20mais%20informações%20sobre%20seus%20serviços%20e%20soluções%20em%20energia."
+                class="q-mb-sm full-width"
               />
             </div>
 
@@ -39,6 +40,7 @@
                 icon="mdi-email-outline"
                 type="a"
                 href="mailto:projetos@gdxenergia.com.br?subject=Novo%20Projeto%20-%20GDX%20Energia&body=Olá,%20gostaria%20de%20discutir%20um%20novo%20projeto%20e%20solicitar%20um%20orçamento."
+                class="q-mb-sm full-width"
               />
             </div>
 
@@ -54,6 +56,7 @@
                 type="a"
                 href="https://wa.me/5521999350077?text=Olá%20GDX%20Energia!%20Gostaria%20de%20mais%20informações%20sobre%20seus%20serviços%20e%20soluções%20em%20energia."
                 target="_blank"
+                class="q-mb-sm full-width"
               />
             </div>
           </div>

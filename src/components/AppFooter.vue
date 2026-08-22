@@ -18,7 +18,7 @@ const { isMobile } = useMobile()
         <div class="text-caption footer-address">
           CNPJ: 19.808.124/0001-26
         </div>
-        <div class="text-caption q-mt-sm footer-copyright">
+        <div class="text-caption footer-copyright">
           &copy; {{ currentYear }} GDX Energia. Todos os direitos reservados.
         </div>
       </div>
@@ -86,6 +86,10 @@ const { isMobile } = useMobile()
   opacity: 0.95;
 }
 
+.footer-copyright {
+  margin-top: 4px;
+}
+
 .footer-social-column {
   display: flex;
   justify-content: flex-end;
@@ -102,6 +106,7 @@ const { isMobile } = useMobile()
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    padding: 8px 16px;
   }
 
   .footer-brand,
@@ -117,14 +122,31 @@ const { isMobile } = useMobile()
     margin-right: 8px;
   }
 
+  .footer-logo {
+    width: 64px;
+  }
+
   .footer-info {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 4px;
     order: 3;
+  }
+
+  .footer-address,
+  .footer-copyright {
+    line-height: 1.25;
+  }
+
+  .footer-copyright {
+    margin-top: 2px;
   }
 
   .footer-social-column {
     margin-left: 8px;
+  }
+
+  .footer-socials .q-btn {
+    font-size: 12px;
   }
 }
 </style>
