@@ -65,7 +65,7 @@ export function useSeo(source: MaybeRefOrGetter<SeoMeta | undefined>) {
     upsertMetaByProperty('og:type', type)
     upsertMetaByProperty('og:locale', 'pt_BR')
 
-    upsertMetaByName('twitter:card', 'summary_large_image')
+    upsertMetaByName('twitter:card', 'summary')
     upsertMetaByName('twitter:title', title)
     upsertMetaByName('twitter:description', description)
     upsertMetaByName('twitter:image', image)

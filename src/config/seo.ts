@@ -8,8 +8,8 @@ export interface SeoMeta {
 }
 
 export const SITE_NAME = 'GDX Energia'
-// ajuste para o domínio definitivo assim que o site for publicado
-export const SITE_URL = 'https://www.gdxenergia.com.br'
+// domínio atual (publicado no Vercel); trocar para o definitivo quando o site for migrado
+export const SITE_URL = 'https://gdx-energia.vercel.app'
 export const DEFAULT_DESCRIPTION =
   'Soluções completas em engenharia elétrica: subestações, redes de distribuição MT/BT, iluminação pública, laudos técnicos NR10 e SPDA, e legalização para loteamentos, condomínios e indústrias.'
 export const DEFAULT_IMAGE = `${SITE_URL}/favicon-512.png`
