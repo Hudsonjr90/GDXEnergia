@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import AppHeader from './components/AppHeader.vue'
 import AppFooter from './components/AppFooter.vue'
+import ScrollToTopButton from './components/ScrollToTopButton.vue'
 import { useSeo } from './composables/useSeo'
 import { staticRoutesSeo } from './config/seo'
 
@@ -23,6 +24,7 @@ useSeo(computed(() => staticRoutesSeo[route.path]))
       </router-view>
     </q-page-container>
     <AppFooter />
+    <ScrollToTopButton />
   </q-layout>
 </template>
 
