@@ -2,12 +2,12 @@
 import CompareWorkCard from '../components/CompareWorkCard.vue'
 import PortfolioInfoCard from '../components/PortfolioInfoCard.vue'
 import { featuredProjects } from '../data/portfolioProjects'
-import beforeImage1 from '../assets/images/home/Montagem-Subestacao-Simplificada-768x768.png'
-import afterImage1 from '../assets/images/home/Iluminacao-Publica-768x768.png'
-import beforeImage2 from '../assets/images/home/Iluminacao-Publica-768x768.png'
-import afterImage2 from '../assets/images/home/Manutencao-Transformadores.png'
-import beforeImage3 from '../assets/images/home/Manutencao-Transformadores.png'
-import afterImage3 from '../assets/images/home/Montagem-Subestacao-Simplificada-768x768.png'
+import beforeImage1 from '../assets/images/portfolio/1.jpeg'
+import afterImage1 from '../assets/images/portfolio/2.jpeg'
+import beforeImage2 from '../assets/images/portfolio/3.jpeg'
+import afterImage2 from '../assets/images/portfolio/4.jpeg'
+import beforeImage3 from '../assets/images/portfolio/5.jpeg'
+import afterImage3 from '../assets/images/portfolio/6.jpeg'
 
 const works = [
   {
