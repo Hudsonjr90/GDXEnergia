@@ -6,6 +6,7 @@ import workRedeMediaTensao2 from "../assets/images/trabalhos/Rede-de-Media-tensa
 import workRedeMediaTensao from "../assets/images/trabalhos/Rede-de-Media-Tensao.png";
 import workRedeSubterranea3 from "../assets/images/trabalhos/Rede-Subterranea-Villa-Blanca-3.png";
 import workRedeSubterranea from "../assets/images/trabalhos/Rede-Subterranea-Villa-Blanca.png";
+import { useMobile } from "../composables/useMobile";
 
 const showFullText = ref(false);
 const showCompanyPdf = ref(false);
@@ -21,6 +22,7 @@ const workImages = [
   workRedeSubterranea,
 ];
 const workSlide = ref(0);
+const { isMobile } = useMobile();
 
 const stats = [
   {
@@ -286,7 +288,7 @@ onUnmounted(() => observer.value?.disconnect());
           transition-next="slide-right"
           control-color="primary"
           padding
-          height="800px"
+          :height="isMobile ? '380px' : '800px'"
           class="about-carousel"
         >
           <q-carousel-slide
@@ -297,7 +299,7 @@ onUnmounted(() => observer.value?.disconnect());
           >
             <q-img
               :src="image"
-              fit="cover"
+              :fit="isMobile ? 'contain' : 'cover'"
               class="about-work-image"
               alt="Trabalho realizado pela GDX Energia"
             />
