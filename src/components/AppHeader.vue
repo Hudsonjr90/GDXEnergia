@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
+
+import { useMobile } from "../composables/useMobile";
+
 import logo from "../assets/images/logo.svg";
 import logo2 from "../assets/images/logo2.svg";
 
@@ -11,15 +14,40 @@ const menu = [
   { label: "Contato", to: "/contato", icon: "mdi-email-outline" },
 ];
 
+const mobileMenu = menu.filter((item) => item.label !== "Home");
+
 const leftDrawerOpen = ref(false);
+
+const { isMobile } = useMobile();
+
+const goHome = () => {
+  leftDrawerOpen.value = false;
+  window.location.href = "/";
+};
 </script>
 
 <template>
   <q-header elevated class="bg-primary text-grey-9 app-header">
     <q-toolbar class="q-px-lg q-py-sm header-toolbar wrapper">
-      <q-img :src="logo" alt="GDX Energia" class="header-logo" />
+      <!-- Logo -->
+      <q-btn
+        flat
+        dense
+        no-caps
+        class="logo-button"
+        aria-label="Ir para Home"
+        @click="goHome"
+      >
+        <q-img
+          :src="logo"
+          alt="GDX Energia"
+          class="header-logo"
+        />
+      </q-btn>
+
       <q-space />
 
+      <!-- Menu Desktop -->
       <div class="row items-center no-wrap gt-sm">
         <q-btn
           v-for="item in menu"
@@ -28,24 +56,29 @@ const leftDrawerOpen = ref(false);
           flat
           unelevated
           no-caps
-          :class="{ 'menu-item-active text-white': $route.path === item.to }"
+          :class="{
+            'menu-item-active text-white': $route.path === item.to,
+          }"
           class="q-px-md q-py-xs text-white text-weight-medium menu-item"
         >
           {{ item.label }}
         </q-btn>
       </div>
 
+      <!-- Menu Mobile -->
       <q-btn
         flat
         dense
         round
         icon="mdi-menu"
         class="lt-md mobile-menu-btn text-white"
+        aria-label="Abrir menu"
         @click="leftDrawerOpen = !leftDrawerOpen"
       />
     </q-toolbar>
   </q-header>
 
+  <!-- Drawer Mobile -->
   <q-drawer
     v-model="leftDrawerOpen"
     side="right"
@@ -54,20 +87,26 @@ const leftDrawerOpen = ref(false);
     class="mobile-drawer bg-mobile"
   >
     <div class="drawer-top row items-center justify-between q-pa-md">
-      <q-img :src="logo2" alt="GDX Energia" class="header-logo" />
+      <q-img
+        :src="logo2"
+        alt="GDX Energia"
+        class="header-logo"
+      />
+
       <q-btn
         flat
         dense
         round
         icon="mdi-close"
         class="text-white"
+        aria-label="Fechar menu"
         @click="leftDrawerOpen = false"
       />
     </div>
 
     <q-list padding class="drawer-list">
       <q-item
-        v-for="item in menu"
+        v-for="item in mobileMenu"
         :key="item.label"
         clickable
         :to="item.to"
@@ -102,6 +141,12 @@ const leftDrawerOpen = ref(false);
   padding: 2px 8px;
 }
 
+.logo-button {
+  padding: 0;
+  min-width: auto;
+  border-radius: 10px;
+}
+
 .menu-item {
   border-bottom: 2px solid transparent;
   border-radius: 0;
@@ -130,7 +175,14 @@ const leftDrawerOpen = ref(false);
 }
 
 :deep(.bg-mobile) {
-  background-image: linear-gradient(to bottom, rgba(4, 12, 8, 0.75), rgba(4, 12, 8, 0.9)), url(../assets/images/bg-gdx.jpg) !important;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(4, 12, 8, 0.75),
+      rgba(4, 12, 8, 0.9)
+    ),
+    url("../assets/images/bg-gdx.jpg") !important;
+
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -142,8 +194,8 @@ const leftDrawerOpen = ref(false);
 
 @media (max-width: 1023px) {
   .logo-button {
-    min-width: 120px;
-    height: 46px;
+    min-width: 90px;
+    height: 40px;
   }
 
   .header-logo {
