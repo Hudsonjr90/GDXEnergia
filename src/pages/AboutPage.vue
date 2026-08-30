@@ -12,7 +12,6 @@ const showFullText = ref(false);
 const showCompanyPdf = ref(false);
 const companyPdfUrl = "/empresa-gdx.pdf";
 
-
 const workImages = [
   work13,
   workSubestacaoSimplificada,
@@ -166,75 +165,97 @@ onUnmounted(() => observer.value?.disconnect());
         </div>
       </div>
 
-       <div class="row q-col-gutter-lg justify-center q-mb-xl cards-equal-height page-anim-item delay-3">
-      <div class="col-12 col-md-4">
-        <q-card flat bordered class="bg-white rounded-borders-xl card-equal-height h-full">
-          <q-card-section class="text-center q-pa-lg full-height column justify-between">
-            <div>
-              <div class="flex flex-center q-mb-md">
-                <q-icon
-                  name="mdi-account-group"
-                  size="48px"
-                  color="white"
-                  class="bg-primary text-white rounded-borders-circle q-pa-sm"
-                />
+      <div
+        class="row q-col-gutter-lg justify-center q-mb-xl cards-equal-height page-anim-item delay-3">
+        <div class="col-12 col-md-4">
+          <q-card
+            flat
+            bordered
+            class="bg-white rounded-borders-xl card-equal-height h-full"
+          >
+            <q-card-section
+              class="text-center q-pa-lg full-height column justify-between"
+            >
+              <div>
+                <div class="flex flex-center q-mb-md">
+                  <q-icon
+                    name="mdi-account-group"
+                    size="48px"
+                    color="white"
+                    class="bg-primary text-white rounded-borders-circle q-pa-sm"
+                  />
+                </div>
+                <div class="text-h5 text-weight-bold text-grey-9 q-mb-sm">
+                  Quem somos
+                </div>
               </div>
-              <div class="text-h5 text-weight-bold text-grey-9 q-mb-sm">
-                Quem somos
+              <div class="text-body1 text-grey-7">
+                Estamos há 10 anos no mercado de engenharia elétrica, pautados
+                pela responsabilidade e comprometimento na entrega dos nossos
+                serviços.
               </div>
-            </div>
-            <div class="text-body1 text-grey-7">
-              Estamos há 10 anos no mercado de engenharia elétrica, pautados pela responsabilidade e comprometimento
-              na entrega dos nossos serviços.
-            </div>
-          </q-card-section>
-        </q-card>
+            </q-card-section>
+          </q-card>
+        </div>
+        <div class="col-12 col-md-4">
+          <q-card
+            flat
+            bordered
+            class="bg-white rounded-borders-xl card-equal-height h-full"
+          >
+            <q-card-section
+              class="text-center q-pa-lg full-height column justify-between"
+            >
+              <div>
+                <div class="flex flex-center q-mb-md">
+                  <q-icon
+                    name="mdi-bullseye-arrow"
+                    size="48px"
+                    color="white"
+                    class="bg-primary text-white rounded-borders-circle q-pa-sm"
+                  />
+                </div>
+                <div class="text-h5 text-weight-bold text-grey-9 q-mb-sm">
+                  Nossa missão
+                </div>
+              </div>
+              <div class="text-body1 text-grey-7">
+                Temos como missão realizar serviços de soluções em engenharia e
+                projetos elétricos com excelência, garantindo a satisfação dos nossos clientes e parceiros.
+              </div>
+            </q-card-section>
+          </q-card>
+        </div>
+        <div class="col-12 col-md-4">
+          <q-card
+            flat
+            bordered
+            class="bg-white rounded-borders-xl card-equal-height h-full"
+          >
+            <q-card-section
+              class="text-center q-pa-lg full-height column justify-between"
+            >
+              <div>
+                <div class="flex flex-center q-mb-md">
+                  <q-icon
+                    name="mdi-eye"
+                    size="48px"
+                    color="white"
+                    class="bg-primary text-white rounded-borders-circle q-pa-sm"
+                  />
+                </div>
+                <div class="text-h5 text-weight-bold text-grey-9 q-mb-sm">
+                  Nossa visão
+                </div>
+              </div>
+              <div class="text-body1 text-grey-7">
+                Nossa visão é superar as expectativas dos nossos clientes com
+                preço acessível e qualidade, tornando-nos referência no setor elétrico.
+              </div>
+            </q-card-section>
+          </q-card>
+        </div>
       </div>
-      <div class="col-12 col-md-4">
-        <q-card flat bordered class="bg-white rounded-borders-xl card-equal-height h-full">
-          <q-card-section class="text-center q-pa-lg full-height column justify-between">
-            <div>
-              <div class="flex flex-center q-mb-md">
-                <q-icon
-                  name="mdi-bullseye-arrow"
-                  size="48px"
-                  color="white"
-                  class="bg-primary text-white rounded-borders-circle q-pa-sm"
-                />
-              </div>
-              <div class="text-h5 text-weight-bold text-grey-9 q-mb-sm">
-                Nossa missão
-              </div>
-            </div>
-            <div class="text-body1 text-grey-7">
-              Temos como missão realizar serviços de soluções em engenharia e projetos elétricos.
-            </div>
-          </q-card-section>
-        </q-card>
-      </div>
-      <div class="col-12 col-md-4">
-        <q-card flat bordered class="bg-white rounded-borders-xl card-equal-height h-full">
-          <q-card-section class="text-center q-pa-lg full-height column justify-between">
-            <div>
-              <div class="flex flex-center q-mb-md">
-                <q-icon
-                  name="mdi-eye"
-                  size="48px"
-                  color="white"
-                  class="bg-primary text-white rounded-borders-circle q-pa-sm"
-                />
-              </div>
-              <div class="text-h5 text-weight-bold text-grey-9 q-mb-sm">
-                Nossa visão
-              </div>
-            </div>
-            <div class="text-body1 text-grey-7">
-              Nossa visão é superar as expectativas dos nossos clientes com preço acessível e qualidade.
-            </div>
-          </q-card-section>
-        </q-card>
-      </div>
-    </div>
 
       <div class="text-center q-mb-xl page-anim-item delay-2">
         <h1

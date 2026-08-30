@@ -2,16 +2,13 @@
 import homeImage1 from "../assets/images/home/Montagem-Subestacao-Simplificada-768x768.png";
 import homeImage2 from "../assets/images/home/Iluminacao-Publica-768x768.png";
 import homeImage3 from "../assets/images/home/Manutencao-Transformadores.png";
+
 import homeSegment1 from "../assets/images/home/loteamentos.png";
 import homeSegment2 from "../assets/images/home/condominios.png";
 import homeSegment3 from "../assets/images/home/industrias.png";
 import homeSegment4 from "../assets/images/home/centrologisticos.png";
 import homeSegment5 from "../assets/images/home/empreendimentoscomerciais.png";
 import homeSegment6 from "../assets/images/home/empreendimentosresidenciais.png";
-
-import { useMobile } from "../composables/useMobile";
-
-const { isMobile } = useMobile();
 
 const slides = [
   {
@@ -100,14 +97,20 @@ const segments = [
                     class="absolute-bottom text-left q-pa-md bg-dark text-white home-card-text"
                     style="opacity: 0.82"
                   >
-                    <div class="text-h6 text-weight-bold">{{ item.title }}</div>
-                    <div class="text-subtitle2">{{ item.description }}</div>
+                    <div class="text-h6 text-weight-bold">
+                      {{ item.title }}
+                    </div>
+
+                    <div class="text-subtitle2">
+                      {{ item.description }}
+                    </div>
                   </div>
                 </q-img>
               </q-card>
             </div>
           </div>
         </div>
+
         <div class="col-12">
           <div class="row q-col-gutter-xl items-center video-section">
             <div class="col-12 col-md-5">
@@ -141,15 +144,20 @@ const segments = [
             </div>
           </div>
         </div>
+
         <div class="col-12 q-pa-xl rounded-borders-xl segments-block">
           <div class="row q-col-gutter-lg items-start">
             <div class="col-12">
               <div class="segments-intro full-height">
-                <div class="text-h4 text-md-h3 text-weight-bold text-grey-9 q-mb-sm home-text-enter delay-1">
+                <div
+                  class="text-h4 text-md-h3 text-weight-bold text-grey-9 q-mb-sm home-text-enter delay-1"
+                >
                   Segmentos atendidos
                 </div>
+
                 <div class="text-subtitle1 text-grey-7 q-mb-lg">
-                  Soluções completas e personalizadas para diferentes tipos de empreendimento.
+                  Soluções completas e personalizadas para diferentes tipos de
+                  empreendimento.
                 </div>
               </div>
             </div>
@@ -161,11 +169,28 @@ const segments = [
                   :key="index"
                   class="col-12 col-sm-6 col-md-4 segment-wrap"
                 >
-                  <q-card flat bordered class="rounded-borders-lg overflow-hidden segment-card">
-                    <q-img :src="segment.image" fit="cover" class="segment-image">
-                      <div class="absolute-bottom segment-caption row items-center no-wrap q-gutter-sm">
-                        <q-icon :name="segment.icon" color="primary" size="22px" />
-                        <div class="text-subtitle2 text-weight-bold text-uppercase ellipsis-2-lines">
+                  <q-card
+                    flat
+                    bordered
+                    class="rounded-borders-lg overflow-hidden segment-card"
+                  >
+                    <q-img
+                      :src="segment.image"
+                      fit="cover"
+                      class="segment-image"
+                    >
+                      <div
+                        class="absolute-bottom segment-caption row items-center no-wrap q-gutter-sm"
+                      >
+                        <q-icon
+                          :name="segment.icon"
+                          color="primary"
+                          size="22px"
+                        />
+
+                        <div
+                          class="text-subtitle2 text-weight-bold text-uppercase ellipsis-2-lines"
+                        >
                           {{ segment.title }}
                         </div>
                       </div>
@@ -300,6 +325,12 @@ const segments = [
 }
 
 @media (max-width: 1023px) {
+  .segment-wrap {
+    width: 100%;
+    max-width: 360px;
+    margin-left: 30px;
+  }
+
   .segment-card,
   .segment-image {
     min-height: 220px;
