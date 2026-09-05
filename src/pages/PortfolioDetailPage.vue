@@ -64,6 +64,16 @@ useJsonLd(
 
         <div class="text-h4 text-md-h3 text-weight-bold text-grey-9 q-mb-lg detail-title">
           {{ project.title }}
+
+          <q-btn
+            unelevated
+            color="primary"
+            label="Solicitar Orçamento"
+            :href="`https://wa.me/5521999350077?text=Olá! Gostaria de solicitar um orçamento para ${project.title}.`"
+            target="_blank"
+            rel="noopener noreferrer"
+            no-caps
+          />
         </div>
 
         <div class="detail-content">
@@ -109,6 +119,9 @@ useJsonLd(
 
 .detail-title {
   line-height: 1.25;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .detail-content {

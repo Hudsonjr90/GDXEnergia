@@ -1,13 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
-
-import { useMobile } from "../composables/useMobile";
-
 import logo from "../assets/images/logo.svg";
-import logo2 from "../assets/images/logo2.svg";
 
 const menu = [
-  { label: "Home", to: "/", icon: "mdi-home-outline" },
   { label: "Sobre nós", to: "/sobre", icon: "mdi-account-group-outline" },
   { label: "Portfólio", to: "/portfolio", icon: "mdi-briefcase-outline" },
   { label: "Parceiros", to: "/parceiros", icon: "mdi-handshake-outline" },
@@ -18,8 +13,6 @@ const mobileMenu = menu.filter((item) => item.label !== "Home");
 
 const leftDrawerOpen = ref(false);
 
-const { isMobile } = useMobile();
-
 const goHome = () => {
   leftDrawerOpen.value = false;
   window.location.href = "/";
@@ -27,7 +20,7 @@ const goHome = () => {
 </script>
 
 <template>
-  <q-header elevated class="bg-primary text-grey-9 app-header">
+  <q-header elevated class="bg-secondary text-grey-9 app-header backdrop-blur">
     <q-toolbar class="q-px-lg q-py-sm header-toolbar wrapper">
       <!-- Logo -->
       <q-btn
@@ -87,11 +80,20 @@ const goHome = () => {
     class="mobile-drawer bg-mobile"
   >
     <div class="drawer-top row items-center justify-between q-pa-md">
-      <q-img
-        :src="logo2"
-        alt="GDX Energia"
-        class="header-logo"
-      />
+      <q-btn
+        flat
+        dense
+        no-caps
+        class="logo-button"
+        aria-label="Ir para Home"
+        @click="goHome"
+      >
+        <q-img
+          :src="logo"
+          alt="GDX Energia"
+          class="header-logo"
+        />
+      </q-btn>
 
       <q-btn
         flat
@@ -133,13 +135,14 @@ const goHome = () => {
 
 <style scoped>
 .header-logo {
-  width: 100px;
+  width: 130px;
   height: 42px;
   object-fit: cover;
   background: transparent;
   border-radius: 10px;
   padding: 2px 8px;
 }
+
 
 .logo-button {
   padding: 0;
@@ -199,7 +202,7 @@ const goHome = () => {
   }
 
   .header-logo {
-    width: 90px;
+  
     height: 40px;
   }
 }

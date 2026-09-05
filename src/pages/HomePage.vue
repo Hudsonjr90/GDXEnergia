@@ -13,20 +13,14 @@ import homeSegment6 from "../assets/images/home/empreendimentosresidenciais.png"
 const slides = [
   {
     title: "Subestações e redes elétricas",
-    description:
-      "Projetos e soluções completas para distribuição de energia elétrica.",
     image: homeImage1,
   },
   {
-    title: "Iluminação pública e privada",
-    description:
-      "Soluções de iluminação eficientes, sustentáveis e de alta performance.",
+    title: "Linha de transmissão de 25kv",
     image: homeImage2,
   },
   {
     title: "Manutenção de transformadores",
-    description:
-      "Detalhes técnicos, segurança e acompanhamento de ponta a ponta.",
     image: homeImage3,
   },
 ];
@@ -99,10 +93,6 @@ const segments = [
                   >
                     <div class="text-h6 text-weight-bold">
                       {{ item.title }}
-                    </div>
-
-                    <div class="text-subtitle2">
-                      {{ item.description }}
                     </div>
                   </div>
                 </q-img>

@@ -1,22 +1,27 @@
 <script setup lang="ts">
-defineProps<{
+import { computed } from 'vue'
+
+const props = defineProps<{
   title: string
   image: string
   slug: string
-  previewText?: string
   buttonLabel?: string
 }>()
+
+const whatsappLink = computed(
+  () =>
+    `https://wa.me/5521999350077?text=${encodeURIComponent(
+      `Olá! Gostaria de solicitar um orçamento para ${props.title}.`
+    )}`
+)
 </script>
 
 <template>
   <q-card flat bordered class="portfolio-info-card">
-    <q-img :src="image" height="180px" fit="cover" />
+    <q-img :src="image" height="360px" fit="cover" />
 
     <q-card-section class="q-pb-sm card-content">
-      <div class="text-subtitle1 text-weight-bold text-grey-9 card-title">{{ title }}</div>
-      <div v-if="previewText" class="text-body2 text-grey-8 q-mt-sm card-preview">
-        {{ previewText }}
-      </div>
+      <div class="text-h6 text-weight-bold text-grey-9 card-title">{{ title }}</div>
     </q-card-section>
 
     <q-card-actions class="q-px-md q-pb-md card-actions">
@@ -25,6 +30,16 @@ defineProps<{
         color="primary"
         :label="buttonLabel || 'Saiba mais'"
         :to="`/portfolio/${slug}`"
+        no-caps
+      />
+
+      <q-btn
+        unelevated
+        color="primary"
+        label="Solicitar Orçamento"
+        :href="whatsappLink"
+        target="_blank"
+        rel="noopener noreferrer"
         no-caps
       />
     </q-card-actions>
@@ -48,7 +63,7 @@ defineProps<{
 }
 
 .card-content {
-  min-height: 120px;
+  min-height: 90px;
 }
 
 .card-title {
@@ -57,13 +72,12 @@ defineProps<{
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  line-height: 1.35;
-  min-height: 2.7rem;
+  line-height: 1.3;
 }
-
-
 
 .card-actions {
   margin-top: auto;
+  display: flex;
+  justify-content: space-between;
 }
 </style>

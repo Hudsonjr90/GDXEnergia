@@ -25,7 +25,7 @@ const { isMobile } = useMobile();
 
 const stats = [
   {
-    value: 10,
+    value: 15,
     label: "ANOS DE EXPERIÊNCIA",
     description:
       "Mais de uma década oferecendo soluções com excelência no setor elétrico.",
@@ -190,7 +190,7 @@ onUnmounted(() => observer.value?.disconnect());
                 </div>
               </div>
               <div class="text-body1 text-grey-7">
-                Estamos há 10 anos no mercado de engenharia elétrica, pautados
+                Estamos há mais de 15 anos no mercado de engenharia elétrica, pautados
                 pela responsabilidade e comprometimento na entrega dos nossos
                 serviços.
               </div>

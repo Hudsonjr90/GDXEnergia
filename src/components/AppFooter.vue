@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { getCurrentYear } from '../utils/functions'
-import logo from "../assets/images/logo.svg";
+import logo from "../assets/images/logo.png";
 import { useMobile } from '../composables/useMobile';
 
 const currentYear = getCurrentYear()
@@ -8,10 +8,10 @@ const { isMobile } = useMobile()
 </script>
 
 <template>
-  <q-footer class="bg-primary text-white">
+  <q-footer class="bg-secondary text-white">
     <div class="row items-center q-pa-md footer-layout" :class="isMobile ? '' : 'wrapper' ">
       <div class="col-12 col-md-4 footer-brand">
-        <img :src="logo" alt="GDX Energia" width="85" class="footer-logo" />
+        <!-- <img :src="logo" alt="GDX Energia" class="footer-logo" /> -->
       </div>
 
       <div class="col-12 col-md-4 footer-info">
@@ -64,12 +64,14 @@ const { isMobile } = useMobile()
 <style scoped>
 .footer-layout {
   width: 100%;
+  padding: 0 1rem;
 }
 
 .footer-brand {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  height: 60px;
 }
 
 .footer-info {
@@ -78,6 +80,11 @@ const { isMobile } = useMobile()
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.footer-logo {
+  width: 150px;
+  height: auto;
 }
 
 .footer-address,
@@ -122,9 +129,6 @@ const { isMobile } = useMobile()
     margin-right: 8px;
   }
 
-  .footer-logo {
-    width: 64px;
-  }
 
   .footer-info {
     width: 100%;

@@ -72,7 +72,6 @@ const works = [
               :title="project.title"
               :image="project.image"
               :slug="project.slug"
-              :preview-text="project.previewText"
             />
           </div>
         </div>
