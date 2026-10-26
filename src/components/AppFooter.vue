@@ -41,7 +41,7 @@ const { isMobile } = useMobile()
             dense
             icon="mdi-linkedin"
             type="a"
-            href="#"
+            href="https://www.linkedin.com/company/gdx-energia/"
             target="_blank"
             aria-label="LinkedIn"
           />

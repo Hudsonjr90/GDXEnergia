@@ -1,11 +1,10 @@
-<script setup lang="ts">
-</script>
-
 <template>
   <q-page class="wrapper">
-    <q-container class="q-py-xl page-animate">
+    <div class="q-py-xl page-animate">
       <div class="text-center q-mb-xl page-anim-item">
-        <div class="text-h4 text-md-h2 text-weight-bold text-grey-9 q-mt-lg q-mb-lg">
+        <div
+          class="text-h4 text-md-h2 text-weight-bold text-grey-9 q-mt-lg q-mb-lg"
+        >
           Vamos discutir a solução ideal para o seu projeto.
         </div>
       </div>
@@ -13,7 +12,11 @@
       <div class="row q-col-gutter-xl">
         <div class="col-12 col-md-6 page-anim-item delay-1 wrapper">
           <div class="q-gutter-md">
-            <div class="text-h4 text-center text-weight-bold text-grey-9 q-mt-xl q-mb-xl">Fale conosco</div>
+            <div
+              class="text-h4 text-center text-weight-bold text-grey-9 q-mt-xl q-mb-xl"
+            >
+              Fale conosco
+            </div>
             <div class="row items-center q-gutter-sm">
               <q-btn
                 flat
@@ -45,6 +48,32 @@
             </div>
 
             <div class="row items-center q-gutter-sm">
+              <!-- <q-btn
+                label="@gdxenergia"
+                no-caps
+                color="primary"
+                flat
+                unelevated
+                dense
+                icon="mdi-instagram"
+                type="a"
+                href="https://www.instagram.com/gdxenergia?igsh=MThkbHRiaThwYndweQ%3D%3D"
+                target="_blank"
+                class="q-mb-sm full-width"
+              />
+              <q-btn
+                label="gdx-energia"
+                no-caps
+                color="primary"
+                flat
+                unelevated
+                dense
+                icon="mdi-linkedin"
+                type="a"
+                href="https://www.linkedin.com/company/gdx-energia/"
+                target="_blank"
+                class="q-mb-sm full-width"
+              />
               <q-btn
                 label="(21) 99935-0077"
                 no-caps
@@ -57,32 +86,43 @@
                 href="https://wa.me/5521999350077?text=Olá%20GDX%20Energia!%20Gostaria%20de%20mais%20informações%20sobre%20seus%20serviços%20e%20soluções%20em%20energia."
                 target="_blank"
                 class="q-mb-sm full-width"
-              />
+              /> -->
+
+             <SocialLinksFab direction="right" class="q-mb-sm icons" />
             </div>
           </div>
         </div>
 
         <div class="col-12 col-md-6 page-anim-item delay-2">
-          <div class="map-container rounded-borders">
+          <div class="madiv rounded-borders">
             <iframe
               src="https://www.google.com/maps?cid=17482256488818489539&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=pt-BR&output=embed"
               width="100%"
               height="400"
-              style="border:0;"
-              loading="lazy">
+              style="border: 0"
+              loading="lazy"
+            >
             </iframe>
           </div>
         </div>
       </div>
-    </q-container>
+    </div>
   </q-page>
 </template>
+
+<script setup lang="ts">
+import SocialLinksFab from '../components/SocialLinksFab.vue'
+</script>
 
 <style scoped>
 .map-container {
   overflow: hidden;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   max-width: 500px;
+}
+
+.icons{
+  margin-left: 12rem;
 }
 </style>
